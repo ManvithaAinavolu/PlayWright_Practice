@@ -1,0 +1,23 @@
+{
+  "name": "playwright_practice",
+  "version": "1.0.0",
+  "description": "This Repo contains all the notes related to playwright and practice sessions using codespaces  1. Installation & Setup:  To Get started with playwright as we are focussing on using JavaScript, To execute JavaScript we need to install NodeJS in the the System.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManvithaAinavolu/PlayWright_Practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ManvithaAinavolu/PlayWright_Practice/issues"
+  },
+  "homepage": "https://github.com/ManvithaAinavolu/PlayWright_Practice#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.2"
+  }
+}
