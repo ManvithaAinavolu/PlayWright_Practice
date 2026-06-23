@@ -18,6 +18,9 @@ test('Orange HRM Login Test with Locator',async ({browser})=>{
      await page.locator("[name='password']").fill("admin123");
      await page.locator("button[type='submit']").click();
         await page.waitForTimeout(5000);
+    await page.screenshot({path:'orangehrm.png'});
+    console.log("The Page Title is:",await page.title());
+    expect(await page.title()).toBe("OrangeHRM");
 });
 
 /*test('Google Search Test with Page Fixture',async ({page})=>{
