@@ -125,5 +125,53 @@ Asynchronous functions are functions which will not execute in a sequential way 
 
 This section tracks the test setup, command trials, and the final successful headless test run.
 
+## Day 3 - 
+Tried to run the tests in headless mode, but still i am unable to see the browser.
+- revised already done and prepared tests, understood the purpose of them 
+- understood the purpose of config.js file - heart of playwright to run the tests.
+
+npx playwright test --> will run the test files from config file driectory path '/tests'
+
+npx playwright test ./tests/Day1.spec.js --> wil run the specific test file.
+
+npx playwright test ./tests/Day1.spec.js --headed --> this will run the playwright is headed mode.
+
+to avoid this for each and everytime we can simply add a headed variable under use{} in config.js file 
+
+use: {
+      headless:false,
+    viewport:null,
+    trace: 'on-first-retry',
+  },
+  to get the page title of the browser use - page.title()
+  understood to use assertions we use expect kewyword.
+  ex: expect(await page.title()).toBe("Google");.
+  asserts the condition to be true.
+
+  understood the importance of await for every step.
+
+  understood conditional timeout in config.js, by default the timeout is 30seconds. we can overwrite by using expect in config.js
+## Day 4:
+  ### Locators in Playwright:
+  page.locator() -  is to be used to locate a webelement in playwright.
+  The method returns an element locator that can be used to perform actions on this page / frame. Locator is resolved to the element immediately before performing an action, so a series of actions on the same locator can in fact be performed on different DOM elements. 
+
+### Note :
+ await pauses the async function at that line until the expression (usually a Promise) resolves, then yields the resolved value (or throws if the promise rejects).
+
+ .fill(): this method is used to pass the input to the text box
+ This method waits for actionability checks, focuses the element, fills it and triggers an input event after filling. Note that you can pass an empty string to clear the input field.
+
+If the target element is not an <input>, <textarea>  element, this method throws an error. However, if the element is inside the <label> element that has an associated control, the control will be filled instead.
+
+ .type(): similar to fill(), but it is deprecated in latest palywright versions
+  1. CSS Selector: 
+  ![alt text](image-1.png)
+
+
+
+
+
+
 
 
