@@ -4,8 +4,10 @@ test('Getting Text from WebPage',async ({browser})=>{
     const context= await browser.newContext();
     const page=await context.newPage();
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-    await page.locator("[name='username']").fill("Admin");
-    await page.locator("[name='password']").fill("admin12344");
+    const username=await page.locator("[name='username']");
+    const password = await page.locator("[name='password']")
+    username.fill("Admin");
+    password.fill("admin1231");
     //entering wrong password to check the error message
     await page.locator("button[type='submit']").click();
     await page.waitForTimeout(5000);
