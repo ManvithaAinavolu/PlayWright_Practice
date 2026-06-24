@@ -1,5 +1,7 @@
 const {test} = require('@playwright/test');
 const {expect} = require('@playwright/test');
+const { loginOrangeHRM } = require('./orangeHRMHelper');
+
 test('Google Search Test with Browser Fixture',async ({browser})=>{
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -13,11 +15,8 @@ test('Google Search Test with Browser Fixture',async ({browser})=>{
 test('Orange HRM Login Test with Locator',async ({browser})=>{
      const context = await browser.newContext();
      const page=await context.newPage();
-     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-     await page.locator("[name='username']").fill("Admin");
-     await page.locator("[name='password']").fill("admin123");
-     await page.locator("button[type='submit']").click();
-        await page.waitForTimeout(5000);
+     await loginOrangeHRM(page);
+     await page.waitForTimeout(5000);
     await page.screenshot({path:'orangehrm.png'});
     console.log("The Page Title is:",await page.title());
     expect(await page.title()).toBe("OrangeHRM");

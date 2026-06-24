@@ -159,14 +159,21 @@ use: {
 ### Note :
  await pauses the async function at that line until the expression (usually a Promise) resolves, then yields the resolved value (or throws if the promise rejects).
 
- .fill(): this method is used to pass the input to the text box
- This method waits for actionability checks, focuses the element, fills it and triggers an input event after filling. Note that you can pass an empty string to clear the input field.
+### type: 
+Types each character in the string into the input, firing input and change events for each keystroke. It is useful for simulating real-user typing behavior.
+### fill:
+ Clears the existing input value and then inputs the entire string at once without firing individual keystroke events. It is faster and more straightforward when you just need to set a value.
 
-If the target element is not an <input>, <textarea>  element, this method throws an error. However, if the element is inside the <label> element that has an associated control, the control will be filled instead.
-
- .type(): similar to fill(), but it is deprecated in latest palywright versions
   1. CSS Selector: 
   ![alt text](image-1.png)
+
+  2. xpath selector:
+  we can use xpath selector as general inside the page.locator().
+  Mostly and generally we use css selectors.
+
+  # Day 5:
+
+  
 
 
 
